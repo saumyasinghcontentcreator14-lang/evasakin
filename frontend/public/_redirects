@@ -1,0 +1,10 @@
+http://www.skindoctorkanpur.com/* https://skindoctorkanpur.com/:splat 301!
+http://skindoctorkanpur.com/* https://skindoctorkanpur.com/:splat 301!
+https://www.skindoctorkanpur.com/* https://skindoctorkanpur.com/:splat 301!
+
+# CMS admin panel and CMS-powered blog (React SPA routes).
+# Scoped only to these two paths so every existing static page/route on
+# the site keeps being served exactly as before.
+/admin/*     /index.html   200
+/insights/*  /index.html   200
+/insights    /index.html   200

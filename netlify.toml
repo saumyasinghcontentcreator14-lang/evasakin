@@ -1,0 +1,46 @@
+[build]
+  base = "frontend"
+  command = "yarn install --frozen-lockfile && yarn build"
+  publish = "build"
+
+[build.environment]
+  CI = "false"
+  NODE_VERSION = "20"
+
+# Belt-and-suspenders copy of frontend/public/_redirects (Netlify also reads
+# that file automatically once it is copied into the build output). Keeping
+# the rules here too means the routing survives even if the publish
+# directory ever changes.
+[[redirects]]
+  from = "http://www.skindoctorkanpur.com/*"
+  to = "https://skindoctorkanpur.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://skindoctorkanpur.com/*"
+  to = "https://skindoctorkanpur.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.skindoctorkanpur.com/*"
+  to = "https://skindoctorkanpur.com/:splat"
+  status = 301
+  force = true
+
+# CMS admin panel and CMS-powered blog (React SPA routes).
+[[redirects]]
+  from = "/admin/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/insights/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/insights"
+  to = "/index.html"
+  status = 200

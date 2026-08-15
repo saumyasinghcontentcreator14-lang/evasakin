@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kanpur ki 47°C garmi mein apni skin kaise bachayein? Dr. Sandeep Uttam ke expert tips – Eva Skin Aesthetic, Keshav Nagar, Kanpur">
+<title>Kanpur Ki Garmi aur Aapki Skin | Eva Skin Aesthetic Blog</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --gold: #c9a96e;
+    --gold-light: #e8d5b0;
+    --deep: #1a1a2e;
+    --cream: #fdf8f2;
+    --warm: #f5efe6;
+    --text: #2d2d2d;
+    --muted: #7a7060;
+    --green-wa: #25D366;
+    --accent: #8b5e3c;
+    --border: rgba(201,169,110,0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    background: var(--deep);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,110,0.18) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 80% at 100% 100%, rgba(139,94,60,0.22) 0%, transparent 60%),
+      linear-gradient(160deg, #0d0d1a 0%, #1a1a2e 40%, #16213e 70%, #0f1a2e 100%);
+    z-index: 0;
+  }
+
+  /* Animated sun rays */
+  .sun {
+    position: absolute;
+    top: -80px;
+    right: -60px;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,200,80,0.22) 0%, rgba(255,140,0,0.12) 40%, transparent 70%);
+    animation: pulse-sun 4s ease-in-out infinite;
+    z-index: 1;
+  }
+  .sun::before {
+    content: '';
+    position: absolute;
+    inset: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,200,80,0.3) 0%, transparent 70%);
+    animation: pulse-sun 4s ease-in-out infinite reverse;
+  }
+
+  @keyframes pulse-sun {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+
+  /* Heat wavy lines */
+  .heat-lines {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 200px;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .heat-lines::before,
+  .heat-lines::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: -100%;
+    width: 300%; height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(201,169,110,0.3), rgba(255,180,50,0.5), rgba(201,169,110,0.3), transparent);
+    animation: heat-wave 3s linear infinite;
+  }
+  .heat-lines::after {
+    bottom: 30px;
+    animation-delay: 1.5s;
+    opacity: 0.5;
+  }
+  @keyframes heat-wave {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(33.33%); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 48px 24px 52px;
+  }
+
+  .blog-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,169,110,0.15);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 6px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    backdrop-filter: blur(8px);
+    animation: fadeInUp 0.6s ease both;
+  }
+  .blog-tag span { font-size: 14px; }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 8vw, 3.8rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    animation: fadeInUp 0.6s 0.1s ease both;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    max-width: 480px;
+    animation: fadeInUp 0.6s 0.2s ease both;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    animation: fadeInUp 0.6s 0.3s ease both;
+  }
+  .doctor-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--accent));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    border: 2px solid rgba(201,169,110,0.5);
+    flex-shrink: 0;
+  }
+  .meta-text { font-size: 13px; }
+  .meta-text strong { color: var(--gold-light); display: block; font-size: 14px; }
+  .meta-text span { color: rgba(255,255,255,0.45); }
+
+  .temp-badge {
+    margin-left: auto;
+    background: rgba(255,80,30,0.18);
+    border: 1px solid rgba(255,100,30,0.3);
+    border-radius: 12px;
+    padding: 8px 14px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .temp-badge .temp-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ff8c42;
+    line-height: 1;
+    display: block;
+  }
+  .temp-badge small { font-size: 9px; color: rgba(255,255,255,0.4); letter-spacing: 0.5px; text-transform: uppercase; }
+
+  /* ── SCROLL INDICATOR ── */
+  .scroll-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.35);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: bounce-scroll 2s ease-in-out infinite;
+  }
+  .scroll-hint::after {
+    content: '';
+    width: 1px;
+    height: 28px;
+    background: linear-gradient(to bottom, rgba(201,169,110,0.5), transparent);
+  }
+  @keyframes bounce-scroll {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── ARTICLE BODY ── */
+  .article-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Intro Pull Quote */
+  .intro-quote {
+    margin: 48px 0 0;
+    padding: 32px 28px;
+    background: linear-gradient(135deg, var(--warm) 0%, #fdf0e0 100%);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 16px 16px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .intro-quote::before {
+    content: '"';
+    position: absolute;
+    top: -10px; right: 16px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    color: var(--gold-light);
+    line-height: 1;
+    opacity: 0.4;
+  }
+  .intro-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-style: italic;
+    color: var(--accent);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Section styling */
+  .section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--deep);
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 10px;
+  }
+
+  p { margin-bottom: 16px; color: var(--text); }
+
+  /* Problem Cards */
+  .problems-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .prob-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 14px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .prob-card:active { transform: scale(0.97); }
+  .prob-card .icon { font-size: 28px; margin-bottom: 8px; display: block; }
+  .prob-card h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--deep);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .prob-card p { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.4; }
+
+  /* Tip List */
+  .tip-list { list-style: none; margin: 20px 0; }
+  .tip-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(201,169,110,0.12);
+  }
+  .tip-list li:last-child { border-bottom: none; }
+  .tip-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--accent));
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .tip-text strong { display: block; font-size: 15px; color: var(--deep); margin-bottom: 3px; }
+  .tip-text span { font-size: 14px; color: var(--muted); }
+
+  /* Warning Banner */
+  .warning-box {
+    background: linear-gradient(135deg, #fff5eb, #ffecd9);
+    border: 1px solid rgba(255,140,0,0.3);
+    border-radius: 16px;
+    padding: 22px 20px;
+    margin: 28px 0;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .warning-icon { font-size: 28px; flex-shrink: 0; }
+  .warning-text p { margin: 0; font-size: 14px; }
+  .warning-text strong { display: block; font-size: 16px; color: #d4550a; margin-bottom: 6px; }
+
+  /* Stat strip */
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 28px 0;
+    border: 1px solid var(--border);
+  }
+  .stat-item {
+    background: var(--warm);
+    padding: 20px 12px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+  }
+  .stat-label { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.3; }
+
+  /* Doctor CTA */
+  .doctor-cta {
+    background: linear-gradient(135deg, var(--deep) 0%, #16213e 100%);
+    border-radius: 20px;
+    padding: 32px 24px;
+    margin: 40px 0 24px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .doctor-cta::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(201,169,110,0.1);
+  }
+  .doctor-cta .cta-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .doctor-cta h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    color: #fff;
+    margin: 0 0 10px;
+  }
+  .doctor-cta p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 24px;
+  }
+
+  .cta-buttons { display: flex; flex-direction: column; gap: 12px; }
+  .btn-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--green-wa);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 15px 24px;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn-wa:active { transform: scale(0.97); box-shadow: 0 2px 10px rgba(37,211,102,0.3); }
+  .btn-wa svg { flex-shrink: 0; }
+
+  .btn-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 14px 24px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: background 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn-call:active { background: rgba(255,255,255,0.12); }
+
+  .clinic-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .clinic-info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+  }
+  .clinic-info-row span:first-child { font-size: 16px; flex-shrink: 0; }
+
+  /* Share Section */
+  .share-section {
+    padding: 28px 0;
+    text-align: center;
+  }
+  .share-label {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .share-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .share-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1.5px solid;
+    transition: all 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+  }
+  .share-wa { color: var(--green-wa); border-color: var(--green-wa); background: rgba(37,211,102,0.06); }
+  .share-wa:active { background: rgba(37,211,102,0.15); }
+  .share-fb { color: #1877F2; border-color: #1877F2; background: rgba(24,119,242,0.06); }
+  .share-fb:active { background: rgba(24,119,242,0.15); }
+  .share-copy { color: var(--muted); border-color: var(--border); background: #fff; }
+  .share-copy:active { background: var(--warm); }
+
+  /* Floating WhatsApp */
+  .float-wa {
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    filter: drop-shadow(0 4px 16px rgba(37,211,102,0.5));
+    animation: float-in 0.6s 1s ease both;
+  }
+  @keyframes float-in {
+    from { transform: translateY(80px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .float-wa-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--green-wa);
+    color: #fff;
+    border-radius: 50px;
+    padding: 14px 20px 14px 16px;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    animation: wa-bounce 3s 2s ease-in-out infinite;
+    white-space: nowrap;
+  }
+  @keyframes wa-bounce {
+    0%, 85%, 100% { transform: translateY(0) scale(1); }
+    90% { transform: translateY(-6px) scale(1.03); }
+    95% { transform: translateY(-3px); }
+  }
+  .float-wa-pill svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+  /* Pulse dot */
+  .pulse-dot {
+    position: absolute;
+    top: 4px; right: 4px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #ff4444;
+    border: 2px solid #fff;
+    animation: pulse-dot 1.5s ease infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+
+  /* Sticky header */
+  .sticky-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(253,248,242,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .sticky-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--deep);
+    line-height: 1.2;
+  }
+  .sticky-logo small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+  .sticky-wa {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--green-wa);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 9px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--deep);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 32px 20px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), #ff8c42);
+    z-index: 200;
+    width: 0%;
+    transition: width 0.1s;
+  }
+
+  @media (max-width: 380px) {
+    .problems-grid { grid-template-columns: 1fr; }
+    .float-wa-pill { font-size: 13px; padding: 12px 16px 12px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Reading Progress -->
+<div class="progress-bar" id="progress"></div>
+
+<!-- Sticky Top Bar -->
+<div class="sticky-bar">
+  <div class="sticky-logo">
+    Eva Skin Aesthetic
+    <small>Dr. Sandeep Uttam · Kanpur</small>
+  </div>
+  <a href="https://wa.me/918726556219?text=Blog+padha,+skin+consultation+chahiye!" class="sticky-wa" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.123 1.523 5.857L0 24l6.318-1.498A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.657-.49-5.193-1.348l-.371-.22-3.751.888.944-3.667-.242-.385A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    Free Consult
+  </a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="sun"></div>
+  <div class="heat-lines"></div>
+
+  <div class="hero-content article-wrap">
+    <div class="blog-tag"><span>☀️</span> Kanpur Summer Special · Blog #01</div>
+
+    <h1>
+      Kanpur की <em>47°C</em> Garmi<br>
+      aur Aapki Skin — Ek Baat<br>
+      Seedhi Seedhi
+    </h1>
+
+    <p class="hero-sub">
+      Jab pankha bhi thak jaaye aur cream pighal jaaye — tab aapki skin ko kya chahiye? Jaaniye expert se.
+    </p>
+
+    <div class="hero-meta">
+      <div class="doctor-avatar">🩺</div>
+      <div class="meta-text">
+        <strong>Dr. Sandeep Uttam</strong>
+        <span>Dermatologist · Eva Skin, Kanpur · May 2025</span>
+      </div>
+      <div class="temp-badge">
+        <span class="temp-num">47°</span>
+        <small>Kanpur °C</small>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</div>
+
+<!-- ARTICLE BODY -->
+<main class="article-wrap">
+
+  <!-- Intro Quote -->
+  <div class="intro-quote">
+    <p>Kanpur mein garmi sirf sweater utarne ka signal nahi hai — yeh aapki skin ke liye ek serious exam ki shuruat hai.</p>
+  </div>
+
+  <!-- Section 1: Garmi ka Scene -->
+  <div class="section">
+    <div class="section-label">Reality Check</div>
+    <h2>Kanpur ki Garmi: Thodi Hassi, Zyada Sachai 😅</h2>
+
+    <p>
+      April aate hi Kanpur ka ek distinct personality emerge hoti hai — roads shimmer karne lagte hain, chay thanda hone se pehle hi garm ho jaati hai, aur sabse important: <strong>aapki skin ek alien environment mein shift ho jaati hai.</strong>
+    </p>
+    <p>
+      Humidity aur dry heat ka woh khatarnak combo — yahi Kanpur ki pehchaan hai. Aur is mausam mein skin problems sirf cosmetic nahi hoti, kaafi baar yeh genuine medical concerns ban jaati hain.
+    </p>
+
+    <div class="stat-strip">
+      <div class="stat-item">
+        <span class="stat-num">47°</span>
+        <div class="stat-label">Peak Temp<br>Summer 2024</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3×</span>
+        <div class="stat-label">Zyada Sweat<br>Normal se</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">80%</span>
+        <div class="stat-label">Cases Badhtey<br>Hain Summer Mein</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Problems -->
+  <div class="section">
+    <div class="section-label">Common Problems</div>
+    <h2>Garmi Mein Skin Ko Kya Hota Hai?</h2>
+    <p>Yeh koi drama nahi — scientifically proven hai ki extreme heat aapki skin barrier ko damage karta hai. Kanpur mein ye 5 problems sabse zyada dekhne milti hain:</p>
+
+    <div class="problems-grid">
+      <div class="prob-card">
+        <span class="icon">🔴</span>
+        <h4>Acne aur Pimples</h4>
+        <p>Sweat + oil = pores band → breakouts guaranteed</p>
+      </div>
+      <div class="prob-card">
+        <span class="icon">🟤</span>
+        <h4>Pigmentation &amp; Tanning</h4>
+        <p>UV rays se melanin overdrive — spots aur dark patches</p>
+      </div>
+      <div class="prob-card">
+        <span class="icon">🌡️</span>
+        <h4>Prickly Heat / Ghamori</h4>
+        <p>Blocked sweat glands — irritation aur redness</p>
+      </div>
+      <div class="prob-card">
+        <span class="icon">🌊</span>
+        <h4>Dehydrated Skin</h4>
+        <p>Andar se sukhi skin, bahar se oily — confusing combo</p>
+      </div>
+      <div class="prob-card">
+        <span class="icon">💧</span>
+        <h4>Oily T-Zone</h4>
+        <p>Sebaceous glands overdrive mein — matte finish goodbye</p>
+      </div>
+      <div class="prob-card">
+        <span class="icon">🌿</span>
+        <h4>Fungal Infections</h4>
+        <p>Garmi + moisture = fungi ka perfect home</p>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <span class="warning-icon">⚠️</span>
+      <div class="warning-text">
+        <strong>Important Baat</strong>
+        <p>Bahut log sunscreen lagana ignore karte hain soch ke "thodi der bahar jaana hai." But UV damage cumulative hoti hai — aur Kanpur ka sun sirf 20 minute mein bhi significant harm kar sakta hai. SPF 30+ mandatory hai.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Tips -->
+  <div class="section">
+    <div class="section-label">Expert Tips</div>
+    <h2>Dr. Sandeep Uttam ke 6 Summer Skin Rules ☀️</h2>
+    <p>Eva Skin mein rozana itne patients aate hain jo summer mein skin neglect karne ki wajah se problems face karte hain. Yeh 6 habits apnao:</p>
+
+    <ul class="tip-list">
+      <li>
+        <span class="tip-num">1</span>
+        <div class="tip-text">
+          <strong>SPF 50+ — Hero of the Season</strong>
+          <span>Ghar ke andar ho ya bahar — SPF lagana band mat karo. Har 2 ghante mein reapply zaroor karein. Indoor UV bhi real hoti hai.</span>
+        </div>
+      </li>
+      <li>
+        <span class="tip-num">2</span>
+        <div class="tip-text">
+          <strong>Lightweight Moisturizer Switch Karo</strong>
+          <span>Thick cream summer mein enemy hai. Gel-based ya water-based moisturizer use karo. Skin ko breathe karne do.</span>
+        </div>
+      </li>
+      <li>
+        <span class="tip-num">3</span>
+        <div class="tip-text">
+          <strong>Double Cleansing — Evening Mein</strong>
+          <span>Din bhar ki dust, sweat aur sunscreen — sab hata ke soye. Micellar water + gentle face wash ka combination best hai.</span>
+        </div>
+      </li>
+      <li>
+        <span class="tip-num">4</span>
+        <div class="tip-text">
+          <strong>Pani Pani aur Sirf Pani</strong>
+          <span>Kanpur ki garmi mein minimum 3 litre paani daily. Electrolyte drinks bhi chalenge — skin hydration andar se aata hai.</span>
+        </div>
+      </li>
+      <li>
+        <span class="tip-num">5</span>
+        <div class="tip-text">
+          <strong>Hands Off Policy for Pimples</strong>
+          <span>Sweat mein haath laga ke pimple dabana sabse common mistake hai. Bacteria spread hoti hai — aur scars bhi mushkil ho jaate hain.</span>
+        </div>
+      </li>
+      <li>
+        <span class="tip-num">6</span>
+        <div class="tip-text">
+          <strong>Clinic Visit: Jab Ghar ka Nuskha Na Kaam Kare</strong>
+          <span>2 hafte se zyada problem hai? Pigmentation bad ho rahi hai? Yeh signal hai ki professional help ki zaroorat hai — delay mat karo.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Section 4: Treatments -->
+  <div class="section">
+    <div class="section-label">Summer Solutions</div>
+    <h2>Garmi Mein Kaun Se Treatments Actually Work?</h2>
+    <p>Eva Skin mein hum summer ke liye specifically customized treatments offer karte hain:</p>
+
+    <h3>🌿 HydraFacial — Instant Glow</h3>
+    <p>Dehydrated skin ke liye ek session hi kaafi hai — cleansing, exfoliation aur deep hydration ek hi treatment mein. Zero downtime, same day results.</p>
+
+    <h3>⚡ Chemical Peel — Tan Gone</h3>
+    <p>Kanpur ki dhoop se jo tanning aur pigmentation hoti hai — targeted peels se skin ka texture aur tone dono improve hote hain, safely.</p>
+
+    <h3>🔴 Acne Treatment Protocol</h3>
+    <p>Summer mein acne breakouts ka ek systematic approach hota hai — sirf creams se nahi hoga. Combination therapy se long-term results milte hain.</p>
+
+    <h3>💫 Laser Pigmentation Treatment</h3>
+    <p>Stubborn dark spots jo sunscreen se bhi nahi jaa rahe — laser treatment se precisely target kiya jaata hai. Safe, FDA-approved technology.</p>
+  </div>
+
+  <!-- Doctor CTA Box -->
+  <div class="doctor-cta">
+    <div class="cta-tag">☎ Free Consultation Available</div>
+    <h3>Aapki Skin Deserve Karti Hai Expert Care</h3>
+    <p>Eva Skin Aesthetic, Keshav Nagar — Kanpur mein Dr. Sandeep Uttam se milein. Pehli consultation free hai. WhatsApp pe directly baat karein.</p>
+
+    <div class="cta-buttons">
+      <a href="https://wa.me/918726556219?text=Blog+padha+%E2%80%94+Summer+skin+consultation+chahiye!" class="btn-wa" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.123 1.523 5.857L0 24l6.318-1.498A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.657-.49-5.193-1.348l-.371-.22-3.751.888.944-3.667-.242-.385A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp pe Book Karein — Free
+      </a>
+      <a href="tel:+918726556219" class="btn-call">
+        📞 &nbsp;+91 87265 56219 — Call Karein
+      </a>
+    </div>
+
+    <div class="clinic-info">
+      <div class="clinic-info-row">
+        <span>📍</span>
+        <span>127/340 W Block, Keshav Nagar, Kanpur — 208014</span>
+      </div>
+      <div class="clinic-info-row">
+        <span>⏰</span>
+        <span>Monday – Sunday · 10 AM – 6 PM</span>
+      </div>
+      <div class="clinic-info-row">
+        <span>⭐</span>
+        <span>5★ Google Rated · 5000+ Happy Patients</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Share -->
+  <div class="share-section">
+    <div class="share-label">📤 Apne Dosto Ko Share Karo</div>
+    <div class="share-buttons">
+      <a href="https://wa.me/?text=Kanpur+ki+garmi+mein+skin+care+tips+%F0%9F%8C%9E+%E2%80%94+Eva+Skin+Blog+zaroor+padho%3A+https%3A%2F%2Fskindoctorkanpur.com%2Fblog%2Fkanpur-summer-skincare" class="share-btn share-wa" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.123 1.523 5.857L0 24l6.318-1.498A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.657-.49-5.193-1.348l-.371-.22-3.751.888.944-3.667-.242-.385A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://skindoctorkanpur.com" class="share-btn share-fb" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <button onclick="copyLink()" class="share-btn share-copy" id="copyBtn">
+        🔗 Copy Link
+      </button>
+    </div>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">Eva Skin Aesthetic</div>
+  <p>Laser & Slimming Centre · Keshav Nagar, Kanpur</p>
+  <p style="margin-top:8px;">
+    <a href="tel:+918726556219">📞 +91 87265 56219</a> &nbsp;·&nbsp;
+    <a href="https://skindoctorkanpur.com">🌐 skindoctorkanpur.com</a>
+  </p>
+  <p style="margin-top:16px; font-size:12px; opacity:0.5;">© 2025 Eva Skin Aesthetic · All rights reserved</p>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/918726556219?text=Blog+padha+%E2%80%94+Summer+skin+ke+baare+mein+baat+karni+hai!" class="float-wa" target="_blank" id="floatWa">
+  <div class="float-wa-pill">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.123 1.523 5.857L0 24l6.318-1.498A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.657-.49-5.193-1.348l-.371-.22-3.751.888.944-3.667-.242-.385A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    Chat Karo — Free
+  </div>
+  <div class="pulse-dot"></div>
+</a>
+
+<script>
+  // Reading progress bar
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop || document.body.scrollTop;
+    const scrollHeight = doc.scrollHeight - doc.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('progress').style.width = progress + '%';
+  });
+
+  // Copy link
+  function copyLink() {
+    const url = 'https://skindoctorkanpur.com/blog/kanpur-summer-skincare';
+    const btn = document.getElementById('copyBtn');
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(() => {
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '🔗 Copy Link', 2000);
+      });
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent = '✅ Copied!';
+      setTimeout(() => btn.textContent = '🔗 Copy Link', 2000);
+    }
+  }
+
+  // Hide float button when near footer
+  const floatWa = document.getElementById('floatWa');
+  const footer = document.querySelector('footer');
+  const observer = new IntersectionObserver(([entry]) => {
+    floatWa.style.opacity = entry.isIntersecting ? '0' : '1';
+    floatWa.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
+  }, { threshold: 0.1 });
+  observer.observe(footer);
+</script>
+</body>
+</html>
