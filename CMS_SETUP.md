@@ -1,49 +1,32 @@
-# Eva Skin Clinic — CMS Integration Notes
+# Eva Skin Clinic — Blog CMS (Decap CMS, Netlify only)
 
-## What was added (nothing else was touched)
+No separate backend, no database, no Render/MongoDB Atlas needed — same
+approach as the My Dentist site. Everything runs on Netlify.
 
-**Backend (`backend/server.py`, `backend/auth.py`):**
-- JWT-based admin login (`POST /api/admin/login`)
-- Blog CRUD: `GET/POST /api/admin/blogs`, `GET/PUT/DELETE /api/admin/blogs/{id}` (all require login)
-- Image upload: `POST /api/admin/upload` → saves to `backend/uploads/`, served at `/uploads/<file>`
-- Public read-only endpoints: `GET /api/blogs`, `GET /api/blogs/{slug}` (published posts only)
-- Uses the same MongoDB connection (`MONGO_URL`, `DB_NAME`) already configured — new collection `blogs`.
+## What was added (nothing else touched)
 
-**Frontend (`frontend/src/admin/*`, `frontend/src/blog/*`, `frontend/src/App.js`):**
-- `/admin/login` — admin login page
-- `/admin` — dashboard listing all posts (draft + published)
-- `/admin/blog/new`, `/admin/blog/edit/:id` — create/edit form with all fields you asked for (title, slug, excerpt, content, category, author, date, featured image, image alt, SEO title, meta description, focus keyword, draft/publish)
-- `/insights` and `/insights/:slug` — public blog listing + post pages, reading only published posts
+- `frontend/public/admin/index.html` + `config.yml` — the CMS admin panel itself, at **`/admin`**
+- `frontend/content/blog/*.md` — blog posts, edited through the CMS, committed to git
+- `frontend/scripts/generate-blog-data.js` — runs automatically before every `yarn start` / `yarn build`, turns those markdown files into `src/generated/blogPosts.json`
+- `frontend/src/blog/BlogListing.jsx`, `BlogPost.jsx` — public blog pages at **`/insights`** and **`/insights/:slug`**
+- One redirect rule added to `netlify.toml` / `_redirects`, scoped only to `/insights/*`
 
-All existing pages (homepage, service pages, and the static files under `frontend/public/blog/*.html`) are **completely untouched**. The public CMS blog was placed at `/insights` instead of `/blog` specifically so it does not collide with your existing static `frontend/public/blog/` folder.
+The FastAPI backend was left completely untouched — this CMS doesn't use it at all. Homepage, navbar, footer, existing static `/blog/*.html` pages: all unchanged.
 
-`frontend/public/_redirects` had 3 lines added at the bottom (SPA fallback scoped only to `/admin/*` and `/insights/*`) — nothing existing in that file was changed.
+## One-time setup (Netlify dashboard, ~2 minutes)
 
-## One-time setup before this works
+1. Netlify site → **Site configuration → Identity** → **Enable Identity**
+2. Same page → **Identity → Services → Git Gateway** → **Enable Git Gateway**
+3. Identity → **Invite users** → invite yourself (your email) as an admin
+4. Check your email, accept the invite, set a password
 
-1. **Set admin credentials** — copy `backend/.env.example` values into your real `backend/.env`, then run:
-   ```
-   python backend/generate_admin_hash.py
-   ```
-   and paste the printed `ADMIN_PASSWORD_HASH` line into `backend/.env`. Also set `JWT_SECRET` to a long random string.
+That's the whole setup. No environment variables, no separate hosting.
 
-2. **Frontend needs to know your backend URL** — in `frontend/.env`, set:
-   ```
-   REACT_APP_BACKEND_URL=https://your-backend-url
-   ```
-   (whatever URL your FastAPI backend is deployed at).
+## How it works day-to-day
 
-3. Install nothing new — no new dependencies were added; everything used (`react-router-dom`, `axios`, `pyjwt`, `bcrypt`, `python-multipart`) was already in your `package.json` / `requirements.txt`.
+1. Go to `yoursite.com/admin`
+2. Log in with the email/password from step 4 above
+3. Create/edit/delete posts, set draft or published, upload a featured image, fill SEO title/meta description/focus keyword
+4. Publishing commits the post to GitHub → Netlify automatically rebuilds the site (1–2 min) → the post appears at `/insights`
 
-4. Deploy backend + frontend as you already do. Visit `/admin/login` to log in and start creating posts.
-
----
-
-## FINAL — ready to use, no manual edits needed
-
-`backend/.env` and `frontend/.env` have already been created inside this project with working values (JWT secret + admin password hash generated for you). MongoDB connection (`MONGO_URL`, `DB_NAME`) will use whatever your hosting platform already injects in production — this file only provides a local fallback and will never override your real production database connection.
-
-**Admin login credentials (save these somewhere safe — they are not stored in plaintext anywhere in the project):**
-- URL: `/admin/login`
-- Username: `admin`
-- Password: `fnhgzFuHSe77wx`
+Draft posts never appear on `/insights` — only what you explicitly publish through the CMS editorial workflow.

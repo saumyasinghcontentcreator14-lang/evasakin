@@ -1,38 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { listPublishedBlogs, resolveImageUrl } from "./api";
+import posts from "@/generated/blogPosts.json";
 
 export default function BlogListing() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    listPublishedBlogs()
-      .then(setPosts)
-      .finally(() => setLoading(false));
-  }, []);
-
   return (
     <div className="max-w-5xl mx-auto px-4 py-16">
       <h1 className="text-3xl font-semibold mb-8">Eva Skin Clinic Blog</h1>
 
-      {loading && <p className="text-neutral-500">Loading posts...</p>}
-
-      {!loading && posts.length === 0 && (
+      {posts.length === 0 && (
         <p className="text-neutral-500">No blog posts published yet.</p>
       )}
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <Link
-            key={post.id}
+            key={post.slug}
             to={`/insights/${post.slug}`}
             className="block rounded-lg border overflow-hidden hover:shadow-md transition-shadow bg-white"
           >
             {post.featuredImage && (
               <img
-                src={resolveImageUrl(post.featuredImage)}
-                alt={post.imageAlt || post.title}
+                src={post.featuredImage}
+                alt={post.alt || post.title}
                 className="w-full h-44 object-cover"
               />
             )}

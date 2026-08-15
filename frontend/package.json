@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-accordion": "^1.2.8",
     "@radix-ui/react-alert-dialog": "^1.1.11",
@@ -56,7 +57,9 @@
     "zod": "^3.24.4"
   },
   "scripts": {
+    "prestart": "node scripts/generate-blog-data.js",
     "start": "craco start",
+    "prebuild": "node scripts/generate-blog-data.js",
     "build": "craco build",
     "test": "craco test"
   },
@@ -75,6 +78,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@craco/craco": "^7.1.0",
+    "@emergentbase/visual-edits": "https://assets.emergent.sh/npm/emergentbase-visual-edits-1.0.8.tgz",
     "@eslint/js": "9.23.0",
     "autoprefixer": "^10.4.20",
     "eslint": "9.23.0",

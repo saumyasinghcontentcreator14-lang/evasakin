@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getPublishedBlog, resolveImageUrl } from "./api";
+import posts from "@/generated/blogPosts.json";
+import { markdownToHtml } from "./markdown";
 
 export default function BlogPost() {
   const { slug } = useParams();
-  const [post, setPost] = useState(null);
-  const [notFound, setNotFound] = useState(false);
-
-  useEffect(() => {
-    setPost(null);
-    setNotFound(false);
-    getPublishedBlog(slug)
-      .then(setPost)
-      .catch(() => setNotFound(true));
-  }, [slug]);
+  const post = posts.find((p) => p.slug === slug);
 
   useEffect(() => {
     if (!post) return;
@@ -34,7 +26,7 @@ export default function BlogPost() {
     setMeta("keywords", post.focusKeyword);
   }, [post]);
 
-  if (notFound) {
+  if (!post) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-24 text-center">
         <h1 className="text-2xl font-semibold mb-4">Post not found</h1>
@@ -43,10 +35,6 @@ export default function BlogPost() {
         </Link>
       </div>
     );
-  }
-
-  if (!post) {
-    return <div className="max-w-2xl mx-auto px-4 py-24 text-neutral-500">Loading...</div>;
   }
 
   return (
@@ -67,15 +55,15 @@ export default function BlogPost() {
 
       {post.featuredImage && (
         <img
-          src={resolveImageUrl(post.featuredImage)}
-          alt={post.imageAlt || post.title}
+          src={post.featuredImage}
+          alt={post.alt || post.title}
           className="w-full rounded-lg mt-6 mb-8"
         />
       )}
 
       <div
         className="max-w-none leading-relaxed text-neutral-800 [&_p]:mb-4 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:mt-8 [&_h2]:mb-3 [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-6 [&_h3]:mb-2 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_a]:text-pink-600 [&_a]:underline"
-        dangerouslySetInnerHTML={{ __html: post.content }}
+        dangerouslySetInnerHTML={{ __html: markdownToHtml(post.content) }}
       />
     </article>
   );

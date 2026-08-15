@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: "frontend/public/uploads/blog"
+public_folder: "/uploads/blog"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "frontend/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Excerpt / Short Description", name: "excerpt", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - { label: "Image Alt Text", name: "alt", widget: "string" }
+      - { label: "Author", name: "author", widget: "string", required: false, default: "Eva Skin Clinic" }
+      - { label: "Category", name: "category", widget: "string", required: false }
+      - { label: "SEO Title", name: "seoTitle", widget: "string", required: false }
+      - { label: "Meta Description", name: "metaDescription", widget: "text", required: false }
+      - { label: "Focus Keyword", name: "focusKeyword", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

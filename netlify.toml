@@ -29,12 +29,8 @@
   status = 301
   force = true
 
-# CMS admin panel and CMS-powered blog (React SPA routes).
-[[redirects]]
-  from = "/admin/*"
-  to = "/index.html"
-  status = 200
-
+# CMS-powered public blog (React SPA route). The /admin panel itself is a
+# real static file (public/admin/index.html) and needs no redirect.
 [[redirects]]
   from = "/insights/*"
   to = "/index.html"

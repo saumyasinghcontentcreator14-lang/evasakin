@@ -1,0 +1,15 @@
+---
+title: "Welcome to the Eva Skin Clinic Blog"
+slug: "welcome-to-eva-skin-clinic-blog"
+excerpt: "Skincare tips, treatment guides, and updates from Eva Skin Clinic, Kanpur."
+date: 2026-08-15
+featuredImage: ""
+alt: "Eva Skin Clinic"
+author: "Eva Skin Clinic"
+category: "Announcements"
+seoTitle: "Eva Skin Clinic Blog — Skincare Tips & Updates"
+metaDescription: "Read the latest skincare tips, treatment guides, and clinic updates from Eva Skin Clinic, Kanpur."
+focusKeyword: "skin clinic kanpur blog"
+---
+
+This is your first blog post. Edit or delete it from the admin panel at **/admin**, and publish new posts any time — they'll appear here automatically after the site rebuilds.

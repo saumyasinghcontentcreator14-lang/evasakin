@@ -1,11 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import AdminLogin from "@/admin/AdminLogin";
-import AdminLayout from "@/admin/AdminLayout";
-import AdminDashboard from "@/admin/AdminDashboard";
-import BlogForm from "@/admin/BlogForm";
-
 import BlogListing from "@/blog/BlogListing";
 import BlogPost from "@/blog/BlogPost";
 
@@ -14,24 +9,15 @@ import BlogPost from "@/blog/BlogPost";
 // frontend/public and is served directly -- this React app previously
 // rendered nothing (`return null`) and did not touch any of those pages.
 //
-// This file ONLY adds the CMS admin panel (/admin/*) and a new,
-// CMS-powered public blog surface (/insights, /insights/:slug) for posts
-// created through the CMS. The path "/insights" was chosen specifically so
-// it does not collide with the existing static frontend/public/blog/
-// folder -- nothing there was renamed, moved, or modified.
+// This file ONLY adds a CMS-powered public blog surface (/insights,
+// /insights/:slug) for posts written through the Decap CMS admin panel at
+// /admin (a separate static page, not part of this React app). The path
+// "/insights" was chosen so it does not collide with the existing static
+// frontend/public/blog/ folder -- nothing there was renamed or modified.
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* CMS admin panel */}
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<AdminDashboard />} />
-          <Route path="blog/new" element={<BlogForm />} />
-          <Route path="blog/edit/:id" element={<BlogForm />} />
-        </Route>
-
-        {/* Public, CMS-powered blog (new -- does not touch /blog/*.html) */}
         <Route path="/insights" element={<BlogListing />} />
         <Route path="/insights/:slug" element={<BlogPost />} />
 
